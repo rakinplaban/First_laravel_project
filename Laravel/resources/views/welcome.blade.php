@@ -42,5 +42,10 @@
                 <div class="title">Laravel 5 😁</div>
             </div>
         </div>
+        <?php
+            //$path = storage_path()."resources/lang/stock_market_data.json";
+            $json = json_decode(file_get_contents(base_path("resources/lang/stock_market_data.json")),true);
+        ?>
+        
     </body>
 </html>
