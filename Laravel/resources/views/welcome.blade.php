@@ -37,15 +37,48 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5 😁</div>
-            </div>
-        </div>
+        
+        <div style="margin: 50px">
         <?php
             //$path = storage_path()."resources/lang/stock_market_data.json";
+            //$json = json_decode(file_get_contents(base_path("resources/lang/stock_market_data.json")),true);
+            //dd($json);
             $json = json_decode(file_get_contents(base_path("resources/lang/stock_market_data.json")),true);
+            $collection = collect($json);
+            //$uniquedate = $collection->unique('date');
+            //dd($uniquedate);
+            
         ?>
+        <table style="border-collapse:collapse" border="1">
+        <tr>
+                <th>date</th>
+                <th>trade_code</th>
+                <th>high</th>
+                <th>low</th>
+                <th>open</th>
+                <th>close</th>
+                <th>volume</th>
+        </tr>
+            <?php
+                foreach($json as $data){
+            ?>
+            <tr>
+                <td><?php echo "<h5 style='color:black'>".$data['date']; "</h5>"?></td>
+                <td><?php echo "<h5 style='color:black'>".$data['trade_code']; "</h5>"?></td>
+                <td><?php echo "<h5 style='color:black'>".$data['high']; "</h5>"?></td>
+                <td><?php echo "<h5 style='color:black'>".$data['low']; "</h5>"?></td>
+                <td><?php echo "<h5 style='color:black'>".$data['open']; "</h5>"?></td>
+                <td><?php echo "<h5 style='color:black'>".$data['close']; "</h5>"?></td>
+                <td><?php echo "<h5 style='color:black'>".$data['volume']; "</h5>"?></td>
+            </tr>
+                    
+            <?php
+        }
+        ?>
+        </table>
+            
+    </div>  
+        
         
     </body>
 </html>
