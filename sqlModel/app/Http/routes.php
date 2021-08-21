@@ -1,5 +1,6 @@
 <?php
 
+use APP\HTTP\Controllers\ModelController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,5 +13,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('list');
 });
+
+Route::get('list',[ModelController::class,'show']);
