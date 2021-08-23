@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class stockmarket extends Model
+class Stockmarket extends Model
 {
     //
+    protected $dates = ['stockmarkets'];
 }

@@ -1,6 +1,6 @@
 <?php
 
-use APP\HTTP\Controllers\ModelController;
+use App\Http\Controllers\ModelController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
