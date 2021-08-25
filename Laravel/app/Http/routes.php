@@ -10,7 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Http\Controllers\StockmarketController;
 
 Route::get('/', function () {
-    return view("index");
+    return view("welcome");
 });
+
+Route::resource('stockmarket', StockmarketController::class);
